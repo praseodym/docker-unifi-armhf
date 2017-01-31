@@ -1,6 +1,6 @@
 .PHONY: all build push
 
-VERSION:=$(shell curl -sSL http://www.ubnt.com/downloads/unifi/debian/dists/unifi5/ubiquiti/binary-armhf/Packages.gz | zgrep Version | sed -rn 's/Version: ([[:digit:]].[[:digit:]].[[:digit:]])-.*/\1/p')
+VERSION:=$(shell curl -sSL http://www.ubnt.com/downloads/unifi/debian/dists/unifi5/ubiquiti/binary-armhf/Packages.gz | zgrep Version | sed -rn 's/Version: ([[:digit:]].[[:digit:]].[[:digit:]]+)-.*/\1/p')
 
 all: build push
 
