@@ -1,10 +1,8 @@
-FROM armhf/debian:jessie
-MAINTAINER Mark Janssen <mark@praseodym.net>
+FROM arm32v7/debian:jessie
 
 VOLUME ["/usr/lib/unifi/data"]
 
 ENV DEBIAN_FRONTEND noninteractive
-
 RUN echo "deb http://archive.raspberrypi.org/debian/ jessie main" > \
     /etc/apt/sources.list.d/raspi.list && \
     apt-key adv --keyserver keys.gnupg.net --recv 82B129927FA3303E
@@ -13,7 +11,6 @@ RUN echo "deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti" > \
     apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
 
 RUN apt-get update && \
-    apt-get dist-upgrade -y && \
     apt-get install -y --no-install-recommends oracle-java8-jdk unifi && \
     apt-get autoremove -y && \
     apt-get clean && \
