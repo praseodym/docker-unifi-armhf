@@ -1,4 +1,4 @@
-# Docker image for UniFi 5 Controller on Raspberry Pi (32-bit)
+# Docker image for UniFi 5 Controller on Raspberry Pi (ARM32v7)
 
 Available from https://hub.docker.com/r/praseodym/unifi-armhf/ (`docker pull praseodym/unifi-armhf`).
 
@@ -8,7 +8,7 @@ Example Docker Compose setup (save as `docker-compose.yml`, run with `docker-com
 version: '2'
 services:
   unifi:
-    image: praseodym/unifi-armhf:unifi5
+    image: praseodym/unifi-armhf:stable
     restart: always
     network_mode: host
     volumes:
